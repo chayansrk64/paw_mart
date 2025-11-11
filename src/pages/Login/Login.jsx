@@ -1,10 +1,20 @@
 
+import { use } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../../provider/AuthContext";
 
 const Login = () => {
+
+    const {signInUser} = use(AuthContext);
   
   const handleLogin = e => {
     e.preventDefault()
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    signInUser(email, password)
+    .then(() => alert('logout successfull'))
+    .catch(error => console.log(error))
     console.log('login ');
   }
 
@@ -33,25 +43,15 @@ const Login = () => {
           </Link>
 
           <form onSubmit={handleLogin} className="space-y-4 mt-4">
-            <div className="grid grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="First name"
-               
-                className="border rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <input
-                type="text"
-                placeholder="Last name"
-                className="border rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
+            
             <input
+              name="email"
               type="email"
               placeholder="Email"
               className="border rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <input
+              name="password"
               type="password"
               placeholder="Enter your password"
               className="border rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
