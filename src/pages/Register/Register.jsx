@@ -1,6 +1,8 @@
 import React, { use } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../../provider/AuthContext";
+import { auth } from "../../firebase/firebase.config";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
 
@@ -31,6 +33,12 @@ const Register = () => {
                 }
             }
         console.log(result);
+        updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: photoURL
+        })
+        .then(() => console.log('User profile updated'))
+        .catch(error => console.log(error))
     })
     .then(error => {
         console.log(error);
