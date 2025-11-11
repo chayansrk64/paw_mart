@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link, NavLink } from 'react-router';
 
 const Navbar = () => {
@@ -6,10 +6,12 @@ const Navbar = () => {
     const links = <>
          <li><NavLink to="/">Home</NavLink></li>
          <li><NavLink to="/my-profile">Pets and Supplies</NavLink></li>
+         
     </>
     return (
-         <div className='sticky top-0 z-10'>
-             <div className="navbar bg-[#30b5b2] shadow-sm text-white">
+        <div className='bg-[#30b5b2]'>
+         <div className='sticky top-0 z-10 max-w-[1440px] mx-auto'>
+             <div className="navbar  text-white">
             <div className="navbar-start">
                 <div className="dropdown">
                 <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -47,6 +49,7 @@ const Navbar = () => {
                 
             </div>
             </div>
+        </div>
         </div>
     );
 };
