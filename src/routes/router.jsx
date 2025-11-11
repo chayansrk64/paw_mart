@@ -7,6 +7,7 @@ import PrivateRoute from "./PrivateRoute";
 import AddListing from "../pages/AddListing/AddListing";
 import MyListings from "../pages/MyListings/MyListings";
 import MyOrders from "../pages/MyOrders/MyOrders";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><MyOrders></MyOrders></PrivateRoute>
             }
         ]
+    },
+    {
+        path: '*',
+        element: <ErrorPage></ErrorPage>
     }
 ])
 
