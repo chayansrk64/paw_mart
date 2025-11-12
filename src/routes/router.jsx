@@ -9,6 +9,7 @@ import MyListings from "../pages/MyListings/MyListings";
 import MyOrders from "../pages/MyOrders/MyOrders";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ListingDetails from "../pages/ListingDetails/ListingDetails";
+import CategoryPage from "../pages/CategoryPage/CategoryPage";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
                 path: '/listing-details/:id',
                 loader: ({params}) => fetch(`http://localhost:3000/listings/${params.id}`),
                 element: <ListingDetails></ListingDetails>
+            },
+            {
+                path: '/category/:categoryName',
+                element: <CategoryPage></CategoryPage>
             },
             {
                 path: '/add-listing',

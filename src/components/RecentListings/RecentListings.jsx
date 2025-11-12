@@ -4,7 +4,7 @@ import SectionTitle from '../SectionTitle/SectionTitle';
 
 const RecentListings = ({listingsPromise}) => {
     const listings = use(listingsPromise)
-    console.log(listings);
+    // console.log(listings);
     return (
         <div className='max-w-7xl mx-auto'>
             <div>
