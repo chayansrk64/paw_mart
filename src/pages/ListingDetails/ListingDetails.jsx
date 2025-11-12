@@ -50,6 +50,7 @@ const ListingDetails = () => {
             console.log('after saved to db =>', data);
             if(data.insertedId){
                 toast("Order Saved!")
+                modalRef.current.close()
             }
         })
 
