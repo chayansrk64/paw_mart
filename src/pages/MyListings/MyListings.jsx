@@ -2,6 +2,7 @@ import React, { use, useEffect, useState } from 'react';
 import { AuthContext } from '../../provider/AuthContext';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import { Link } from 'react-router';
+import { toast } from 'react-toastify';
 
 const MyListings = () => {
     const {user} = use(AuthContext)
@@ -16,6 +17,55 @@ const MyListings = () => {
         })
     }, [user])
 
+const handleDelete = (id) => {
+  // Show confirmation toast with buttons
+  toast.info(
+    <div className="flex flex-col gap-2">
+      <p className="font-medium text-gray-800">Are you sure you want to delete this listing?</p>
+      <div className="flex gap-3 justify-end">
+        <button
+          className="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400 text-sm"
+          onClick={() => {
+            toast.dismiss(); // close the toast
+          }}
+        >
+          Cancel
+        </button>
+
+        <button
+          className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 text-sm"
+          onClick={() => {
+            // Proceed with delete
+            toast.dismiss(); // close the confirmation toast
+            fetch(`http://localhost:3000/listings/${id}`, {
+              method: 'DELETE',
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.deletedCount > 0 || data.success) {
+                  setMyListings((prev) => prev.filter((item) => item._id !== id));
+                  toast.success('Listing deleted successfully!');
+                } else {
+                  toast.error('Failed to delete. Try again.');
+                }
+              })
+              .catch((err) => {
+                console.error(err);
+                toast.error('Something went wrong!');
+              });
+          }}
+        >
+          Delete
+        </button>
+      </div>
+    </div>,
+    {
+      autoClose: false, // keep toast open until user acts
+      closeOnClick: false,
+      draggable: false,
+    }
+  );
+};
 
     return (
         <div className='max-w-7xl mx-auto'>
@@ -68,7 +118,7 @@ const MyListings = () => {
         <td className="font-bold">{listing.price}</td>
         <td>
           <Link to={`/listing-update/${listing._id}`} className="btn btn-ghost btn-xs bg-green-500 text-white me-2">Update</Link>
-          <button className="btn btn-ghost btn-xs bg-red-500 text-white">Delete</button>
+          <button onClick={() => handleDelete(`${listing._id}`)} className="btn btn-ghost btn-xs bg-red-500 text-white">Delete</button>
         </td>
       </tr>
      )

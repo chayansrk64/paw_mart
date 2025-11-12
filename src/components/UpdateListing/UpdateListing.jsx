@@ -1,6 +1,7 @@
 import React from 'react';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import { useLoaderData } from 'react-router';
+import { toast } from 'react-toastify';
 
 const UpdateListing = () => {
 
@@ -35,6 +36,9 @@ const UpdateListing = () => {
         .then(res => res.json())
         .then(data => {
             console.log('updated listing', data);
+            if(data.modifiedCount > 0){
+                toast('Listing Updated!')
+            }
         })
 
 
