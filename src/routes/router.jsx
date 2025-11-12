@@ -8,6 +8,7 @@ import AddListing from "../pages/AddListing/AddListing";
 import MyListings from "../pages/MyListings/MyListings";
 import MyOrders from "../pages/MyOrders/MyOrders";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import ListingDetails from "../pages/ListingDetails/ListingDetails";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 Component: Register
+            },
+            {
+                path: '/listing-details/:id',
+                loader: ({params}) => fetch(`http://localhost:3000/listings/${params.id}`),
+                element: <ListingDetails></ListingDetails>
             },
             {
                 path: '/add-listing',
