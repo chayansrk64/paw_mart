@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import { Link } from 'react-router';
+import { motion } from "motion/react"
 
 const Categories = ({listingsPromise}) => {
     const categories = use(listingsPromise)
@@ -22,11 +23,15 @@ const Categories = ({listingsPromise}) => {
                  <div className="">
                 {pets.map((item, index) => (
                 <Link key={index} to={`/category/${item.category}`}>
-                    <div className="card tooltip" data-tip={`${item.category}`}>
+                    <motion.div 
+                    className="card tooltip"
+                    data-tip={`${item.category}`}
+                    whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                    >
                     <img src={item.image} alt={item.name} className="w-full h-40 object-cover"/>
                     <h3>{item.name}</h3>
                     <p className='font-semibold'>Category: {item.category}</p>
-                    </div>
+                    </motion.div>
                 </Link>
                 ))}
             </div>
@@ -34,11 +39,11 @@ const Categories = ({listingsPromise}) => {
                  <div className="">
                 {petFood.map((item, index) => (
                 <Link key={index} to={`/category/${item.category}`}>
-                    <div className="card tooltip" data-tip={`${item.category}`}>
+                    <motion.div className="card tooltip" data-tip={`${item.category}`}  whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <img src={item.image} alt={item.name} className="w-full h-40 object-cover"/>
                     <h3>{item.name}</h3>
                    <p className='font-semibold'>Category: {item.category}</p>
-                    </div>
+                    </motion.div>
                 </Link>
                 ))}
             </div>
@@ -46,11 +51,11 @@ const Categories = ({listingsPromise}) => {
                  <div className="">
                 {Accessories.map((item, index) => (
                 <Link key={index} to={`/category/${item.category}`}>
-                    <div className="card tooltip" data-tip={`${item.category}`}>
+                    <motion.div className="card tooltip" data-tip={`${item.category}`}  whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <img src={item.image} alt={item.name} className="w-full h-40 object-cover"/>
                     <h3>{item.name}</h3>
                     <p className='font-semibold'>Category: {item.category}</p>
-                    </div>
+                    </motion.div>
                 </Link>
                 ))}
             </div>
@@ -58,11 +63,11 @@ const Categories = ({listingsPromise}) => {
                  <div className="">
                 {petCare.map((item, index) => (
                 <Link key={index} to={`/category/${item.category}`}>
-                    <div className="card tooltip" data-tip={`${item.category}`}>
+                    <motion.div className="card tooltip" data-tip={`${item.category}`}  whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <img src={item.image} alt={item.name} className="w-full h-40 object-cover"/>
                     <h3>{item.name}</h3>
                     <p className='font-semibold'>Category: {item.category}</p>
-                    </div>
+                    </motion.div>
                 </Link>
                 ))}
             </div>
