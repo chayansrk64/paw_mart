@@ -69,7 +69,7 @@ const Navbar = () => {
                         <input
                         onChange={(e) => handleTheme(e.target.checked)}
                          type="checkbox" 
-                         defaultChecked 
+                         defaultChecked={localStorage.getItem('theme')}
                          className="toggle me-2" />
 
                         <img className='w-10 h-10 rounded-full me-2' title={user?.displayName || "User"} src={ user?.photoURL} alt="" />
