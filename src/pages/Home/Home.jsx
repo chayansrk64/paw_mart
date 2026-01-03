@@ -3,6 +3,11 @@ import RecentListings from '../../components/RecentListings/RecentListings';
 import AdoptionAwareness from '../../components/AdoptionAwareness/AdoptionAwareness';
 import PetHeroes from '../../components/PetHeroes/PetHeroes';
 import Categories from '../../components/Categories/Categories';
+import HighLights from '../../components/HighLights/HighLights';
+import Statistics from '../../components/Statistics/Statistics';
+import Testimonials from '../../components/Testimonials/Testimonials';
+import FAQ from '../../components/FAQ/FAQ';
+import CTA from '../../components/CTA/CTA';
  
 const listingsPromise = fetch('http://localhost:3000/latest-listings').then(res => res.json());
 
@@ -14,6 +19,11 @@ const Home = () => {
             <RecentListings listingsPromise={listingsPromise}></RecentListings>
             <AdoptionAwareness></AdoptionAwareness>
             <PetHeroes></PetHeroes>
+            <HighLights></HighLights>
+            <Statistics></Statistics>
+            <Testimonials></Testimonials>
+            <FAQ></FAQ>
+            <CTA></CTA>
         </div>
     );
 };

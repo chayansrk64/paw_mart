@@ -1,4 +1,5 @@
 import React from "react"
+import SectionTitle from "../SectionTitle/SectionTitle";
  
 
 const heroes = [
@@ -38,23 +39,12 @@ const heroes = [
 
 const PetHeroes = () => {
   return (
-    <section className="py-16 px-6 ">
-      <div data-aos="fade-up" className="text-center mb-12">
-        <div className="flex items-center justify-center gap-4 mb-3">
-          <span className="h-0.5 w-10 bg-[#777C6D] rounded"></span>
-          <h2 className="text-3xl md:text-3xl font-bold">
-            Meet Our <span className="text-[#777C6D]">Pet Heroes</span>
-          </h2>
-          <span className="h-0.5 w-10 bg-[#777C6D] rounded"></span>
-        </div>
-        <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
-          These amazing humans chose adoption and rescue — giving countless pets
-          a chance to live, love, and thrive again. 🐾
-        </p>
-      </div>
-
+    <section className="py-16 px-6 max-w-7xl mx-auto">
+      <SectionTitle title="To know about PawMart." subtitle=" These amazing humans chose adoption and rescue — "> </SectionTitle>
+      <div  className=" ">
+      
       {/* Cards Grid */}
-      <div  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <div  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
         {heroes.map((hero) => (
           <div
             key={hero.id}
@@ -78,6 +68,7 @@ const PetHeroes = () => {
             </div>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );
