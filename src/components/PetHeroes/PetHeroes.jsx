@@ -40,15 +40,16 @@ const heroes = [
 const PetHeroes = () => {
   return (
     <section className="py-16 px-6 max-w-7xl mx-auto">
-      <SectionTitle title="To know about PawMart." subtitle=" These amazing humans chose adoption and rescue — "> </SectionTitle>
+      <SectionTitle title="About PawMart." subtitle=" These amazing humans chose adoption and rescue — "> </SectionTitle>
       <div  className=" ">
       
       {/* Cards Grid */}
       <div  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
         {heroes.map((hero) => (
           <div
+          data-aos="fade-up"
             key={hero.id}
-            className="bg-white rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-2"
+            className="bg-white dark:bg-black  rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-2"
           >
             <div className="overflow-hidden rounded-t-2xl">
               <img
@@ -58,13 +59,13 @@ const PetHeroes = () => {
               />
             </div>
             <div className="p-5 text-center">
-              <h3 className="text-lg font-semibold text-gray-800">
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
                 {hero.name}
               </h3>
-              <p className="text-pink-600 text-sm font-medium mb-3">
+              <p className="text-[#2f3028] dark:text-white text-sm font-medium mb-3">
                 {hero.role}
               </p>
-              <p className="text-gray-600 text-sm">{hero.story}</p>
+              <p className="text-gray-600 dark:text-white text-sm">{hero.story}</p>
             </div>
           </div>
         ))}

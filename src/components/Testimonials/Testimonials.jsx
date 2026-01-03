@@ -1,4 +1,3 @@
-import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -54,43 +53,37 @@ const testimonials = [
 const Testimonials = () => {
   return (
   <>
-  <div className='h-[400px] max-w-7xl mx-auto'>
+  <div className='h-[400px] max-w-7xl mx-auto mb-16'>
   <SectionTitle title="Testimonials" subtitle="Our Testimonials said about the faithness!"></SectionTitle>
       <Swiper
-        slidesPerView={3}
+        
         spaceBetween={30}
         freeMode={true}
         pagination={{
           clickable: true,
         }}
+         breakpoints={{
+    // mobile
+    0: {
+      slidesPerView: 1,
+    },
+    // tablet
+    768: {
+      slidesPerView: 2,
+    },
+    // desktop
+    1024: {
+      slidesPerView: 3,
+    },
+  }}
         modules={[FreeMode, Pagination]}
         className="mySwiper"
       >
         {testimonials.map((hero) => (
             <SwiperSlide>
-          {/* <div
-            key={hero.id}
-            className="bg-white rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-2"
-          >
-            <div className="overflow-hidden rounded-t-2xl">
-              <img
-                src={hero.image}
-                alt={hero.name}
-                className="w-full h-60 object-cover hover:scale-105 transition"
-              />
-            </div>
-            <div className="p-5 text-center">
-              <h3 className="text-lg font-semibold text-gray-800">
-                {hero.name}
-              </h3>
-              <p className="text-pink-600 text-sm font-medium mb-3">
-                {hero.role}
-              </p>
-              <p className="text-gray-600 text-sm">{hero.story}</p>
-            </div>
-          </div> */}
-          <div className="flex justify-center items-center h-[400px]">
-      <div className="relative w-72 bg-white shadow-lg hover:shadow-2xl rounded-xl pt-14">
+         
+          <div data-aos="fade-up" className="flex justify-center items-center h-[400px]">
+      <div className="relative w-72 bg-white dark:bg-black shadow-lg hover:shadow-2xl rounded-xl pt-14">
         
         {/* Avatar */}
         <div className="absolute -top-10 left-1/2 -translate-x-1/2">

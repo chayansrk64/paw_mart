@@ -30,14 +30,14 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section className="max-h-screen py-20 px-6 bg-white">
+    <section className="max-h-screen py-20 px-6 bg-white dark:bg-black">
       <div className="max-w-7xl mx-auto">
         <SectionTitle title="Frequently Asked Questions" subtitle=" Everything you need to know about PawMart."></SectionTitle>
         
 
         <div className="mt-10 space-y-4">
-          {faqs.map((q, i) => (
-           <div tabIndex={0} className="collapse collapse-arrow bg-base-100 border-base-300 border">
+          {faqs.map((q) => (
+           <div data-aos="fade-up" tabIndex={0} className="collapse collapse-arrow bg-base-100 border-base-300 border">
   <div className="collapse-title font-semibold">{q.question}</div>
   <div className="collapse-content text-sm">
    {q.answer}

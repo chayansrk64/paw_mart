@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 @import "tailwindcss";
  @plugin "daisyui" {
    themes: light --default, dark --prefersdark;
  }
 
- @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] * ))
+ @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] * ));
 
+body {
+  font-family: "PT Serif", serif;
+}

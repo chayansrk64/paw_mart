@@ -6,7 +6,7 @@ const ListingCard = ({listing}) => {
     return (
         <div className='overflow-y-hidden'>
          <>
-            <div data-aos="fade-up" className="relative bg-[#EEEEEE] rounded-2xl shadow hover:shadow-md transition p-4 mx-auto"
+            <div data-aos="fade-up" className="relative bg-[#EEEEEE] dark:bg-black rounded-2xl shadow hover:shadow-md transition p-4 mx-auto"
             
             >
       {/* Favorite Icon */}
@@ -25,12 +25,12 @@ const ListingCard = ({listing}) => {
 
       {/* Details */}
       <div className="-mt-4 p-4 rounded-xl">
-        <h3 className="font-semibold pt-4 text-lg text-gray-800">{name}</h3>
+        <h3 className="font-semibold pt-4 text-lg text-gray-800 dark:text-white">{name}</h3>
         <div className="flex gap-2 mt-1 mb-2">
-          <span className="text-xs  px-2 py-1 rounded-md text-gray-700">
+          <span className="text-xs  px-2 py-1 rounded-md text-gray-700 dark:text-white">
             {category}
           </span>
-          <span className="text-xs  px-2 py-1 rounded-md text-gray-700">
+          <span className="text-xs  px-2 py-1 rounded-md text-gray-700 dark:text-white">
             {location}
           </span>
         </div>
@@ -43,7 +43,7 @@ const ListingCard = ({listing}) => {
         <div className="flex justify-between items-center mt-4">
           <div>
             <p className="text-xs ">PRICE</p>
-            <p className="text-lg font-semibold text-gray-900">
+            <p className="text-lg font-semibold text-gray-900 dark:text-white">
               {price === 0 ? "Free" : `৳${price}`}
             </p>
           </div>

@@ -3,7 +3,7 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 const Statistics = () => {
   return (
     <section className="max-h-screen py-20 px-6 ">
-      <div className="max-w-7xl mx-auto text-center">
+      <div className="max-w-7xl mx-auto ">
         <SectionTitle title="Statistics" subtitle="This shows how we are growing over the years"> </SectionTitle>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
@@ -14,7 +14,7 @@ const Statistics = () => {
             { value: "1K+", label: "Products Listed" }
           ].map((stat, i) => (
             <div key={i}>
-                <div className="bg-[#B7B89F] py-12 rounded-xl">
+                <div data-aos="fade-up" className="bg-[#B7B89F] py-12 rounded-xl text-center hover:shadow-2xl">
                      <h3 className="text-4xl font-bold">{stat.value}</h3>
                     <p className="mt-2">{stat.label}</p>
                 </div>
