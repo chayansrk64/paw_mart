@@ -17,9 +17,9 @@ const Home = () => {
             <Banner></Banner>
             <Categories listingsPromise={listingsPromise}></Categories>
             <RecentListings listingsPromise={listingsPromise}></RecentListings>
-            <AdoptionAwareness></AdoptionAwareness>
-            <PetHeroes></PetHeroes>
             <HighLights></HighLights>
+            {/* <AdoptionAwareness></AdoptionAwareness> */}
+            <PetHeroes></PetHeroes>
             <Statistics></Statistics>
             <Testimonials></Testimonials>
             <FAQ></FAQ>
